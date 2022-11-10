@@ -25,14 +25,16 @@ public class PasswordClient {
        password in your SecurePassword object using the setter method, .setPassword(),
     */
         SecurePassword mySC = new SecurePassword(password);
+        System.out.println(mySC.status());
 
         while ( !mySC.isSecure() ) {
-            System.out.println(mySC.status());
+
             System.out.print("\nEnter a new secure password: ");
             mySC.setPassword(scanner.nextLine());
+
+            System.out.println(mySC.status());
         }
 
-        System.out.println("Password is secure");
         scanner.close();
     }
 }
